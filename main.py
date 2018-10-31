@@ -87,8 +87,8 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-        user = User.query.filter_by(username=username).first()      #if user doesn't exist, user == None
-        if user and user.password == password:                      #conditional breaks if user == None
+        user = User.query.filter_by(username=username).first()      
+        if user and user.password == password:                      
             session['username'] = username
             flash('Logged in')
             return redirect('/newpost')
